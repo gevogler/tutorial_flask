@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} Crear una nueva entrada {% endblock %}</h1>
+
+<form method="post">
+
+    <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text"
+               name="title"
+               placeholder="Título de la entrada"
+               class="form-control"
+               value="{{ request.form['title'] }}">
+    </div>
+
+    <div class="form-group mt-2">
+        <label for="content">Contenido</label>
+        <textarea name="content"
+                  placeholder="Contenido"
+                  class="form-control">{{ request.form['content'] }}</textarea>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">
+            Enviar
+        </button>
+    </div>
+
+</form>
+
+{% endblock %}
